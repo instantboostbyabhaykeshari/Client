@@ -62,7 +62,13 @@ const Bottom = () => {
                         <Link to={"/seller"} className={matchRoute("/seller")?"bottomLinkActive": "bottomLinkInactive"}>
                             <div className="seller">
                                 <RiAdminFill size={22} />
-                                <p>Orders</p>
+                                <p>Seller</p>
+                            </div>
+                        </Link>
+                        <Link to={"/profile"} className={matchRoute("/profile")?"bottomLinkActive": "bottomLinkInactive"}>
+                            <div className="profile">
+                                <FontAwesomeIcon className="iconColorSize" icon={faCircleUser} />
+                                <p>Profile</p>
                             </div>
                         </Link>
                     </div>

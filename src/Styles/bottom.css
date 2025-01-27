@@ -24,7 +24,7 @@
     text-align: center;
 }
 
-.home, .order, .bookmark, .profile {
+.home, .order, .bookmark, .profile, .seller {
     display: flex;
     flex-direction: column;
     justify-content: center;
