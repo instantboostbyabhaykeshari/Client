@@ -20,35 +20,55 @@ const Bottom = () => {
     }
 
     return (
-        <div className="bottom">
-            <Link to={"/home"} className={matchRoute("/home")?"bottomLinkActive": "bottomLinkInactive"} >
-                <div className="home">
-                    <FontAwesomeIcon className="iconColorSize" icon={faHouse} />
-                    <p>Home</p>
-                </div>
-            </Link>
-            <Link to={"/order"} className={matchRoute("/order")?"bottomLinkActive": "bottomLinkInactive"}>
-                <div className="order">
-                    {
-                        signUpData.email === "sudhanshumodan7890@gmail.com" ?
-                        (<><RiAdminFill size={22} /><p>Seller</p></>) : (<><FontAwesomeIcon className="iconColorSize" icon={faReceipt} />
-                        <p>Orders</p></>)
-                    }
-                </div>
-            </Link>
-            <Link to={"/bookmark"} className={matchRoute("/bookmark")?"bottomLinkActive": "bottomLinkInactive"}>
-                <div className="bookmark">
-                    <FontAwesomeIcon className="iconColorSize" icon={faBookmark} />
-                    <p>Bookmark</p>
-                </div>
-            </Link>
-            <Link to={"/profile"} className={matchRoute("/profile")?"bottomLinkActive": "bottomLinkInactive"}>
-                <div className="profile">
-                    <FontAwesomeIcon className="iconColorSize" icon={faCircleUser} />
-                    <p>Profile</p>
-                </div>
-            </Link>
-        </div>
+        <>
+            {
+                signUpData.email !== "sudhanshumodan7890@gmail.com" ?
+                (
+                    <div className="bottom">
+                        <Link to={"/home"} className={matchRoute("/home")?"bottomLinkActive": "bottomLinkInactive"} >
+                            <div className="home">
+                                <FontAwesomeIcon className="iconColorSize" icon={faHouse} />
+                                <p>Home</p>
+                            </div>
+                        </Link>
+                        <Link to={"/order"} className={matchRoute("/order")?"bottomLinkActive": "bottomLinkInactive"}>
+                            <div className="order">
+                                <FontAwesomeIcon className="iconColorSize" icon={faReceipt} />
+                                <p>Orders</p>
+                            </div>
+                        </Link>
+                        <Link to={"/bookmark"} className={matchRoute("/bookmark")?"bottomLinkActive": "bottomLinkInactive"}>
+                            <div className="bookmark">
+                                <FontAwesomeIcon className="iconColorSize" icon={faBookmark} />
+                                <p>Bookmark</p>
+                            </div>
+                        </Link>
+                        <Link to={"/profile"} className={matchRoute("/profile")?"bottomLinkActive": "bottomLinkInactive"}>
+                            <div className="profile">
+                                <FontAwesomeIcon className="iconColorSize" icon={faCircleUser} />
+                                <p>Profile</p>
+                            </div>
+                        </Link>
+                    </div>
+                ):
+                (
+                    <div className="bottom">
+                        <Link to={"/home"} className={matchRoute("/home")?"bottomLinkActive": "bottomLinkInactive"} >
+                            <div className="home">
+                                <FontAwesomeIcon className="iconColorSize" icon={faHouse} />
+                                <p>Home</p>
+                            </div>
+                        </Link>
+                        <Link to={"/seller"} className={matchRoute("/seller")?"bottomLinkActive": "bottomLinkInactive"}>
+                            <div className="seller">
+                                <RiAdminFill size={22} />
+                                <p>Orders</p>
+                            </div>
+                        </Link>
+                    </div>
+                )
+            }
+        </>
     )
 }
 
