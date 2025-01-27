@@ -49,7 +49,7 @@ function Cart() {
       )
     : 0;
 
-  const tax = totalAmount > 0 ? 29 : 0;
+  const tax = totalAmount > 0 ? 0 : 0;
   const grandTotal = totalAmount + tax;
 
       // console.log("Cart SignUp Data: ",signUpData);
