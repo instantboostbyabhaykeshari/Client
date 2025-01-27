@@ -27,6 +27,7 @@
 
 .CategoriesLinkClassName {
     text-decoration: none;
+    color: black;
 }
 
 .pizza, .burger, .momos, .chow {
