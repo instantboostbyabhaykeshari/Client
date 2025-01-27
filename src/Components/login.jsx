@@ -6,7 +6,7 @@ import apiConnector from "../Services/apiConnector.js";
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { setSignUpData } from '../Slices/authSlice.js';
-import deliveryPhoto from "../../public/images/Delivery.png";
+import deliveryPhoto from "/images/Delivery.png";
 import "../Styles/login.css";
 
 const Login = () => {
