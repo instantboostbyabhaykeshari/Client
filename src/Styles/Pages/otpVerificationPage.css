@@ -1,0 +1,148 @@
+.verify{
+    width: 100vw;
+    height: 100vh;
+}
+
+.sentVerificationCode {
+  width: 90vw;
+  margin: 5rem auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.verificationOtp {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.sent {
+  font-size: 1.5rem;
+}
+
+.otpInput {
+  margin: auto;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+}
+
+.otpInputValue {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.otpVerificationPageDetails {
+  width: 90vw;
+  margin: 3rem auto 2rem auto;
+}
+
+.verificationCodePara {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.weHaveSentVerificationCode {
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+.userEmailAtVerificationTime {
+  color: #4FAF5A;
+  font-weight: 600;
+  display: inline;
+}
+
+.otpVerificationForm {
+  width: 90vw;
+  margin: auto;
+}
+
+.verifyOtpInput {
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.verifyOtpInput:focus {
+  border-color: #4FAF5A;
+}
+
+.verifyEmailButton {
+  margin-top: 2rem;
+  padding: 12px;
+  width: 90vw;
+  background-color: #4FAF5A;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  color: #EEF7EF ;
+}
+
+.resendOTP {
+  width: 90vw;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 5px;
+}
+
+.spinnerDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 40px;
+  aspect-ratio: 1;
+  color: #4faf5a;
+  position: relative;
+  background: conic-gradient(from 134deg at top, currentColor 92deg, #0000 0)
+      top,
+    conic-gradient(from -46deg at bottom, currentColor 92deg, #0000 0) bottom;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+}
+.spinner:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  --g: currentColor 14.5px, #0000 0 calc(100% - 14.5px), currentColor 0;
+  background: linear-gradient(45deg, var(--g)),
+    linear-gradient(-45deg, var(--g));
+  animation: l7 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes l7 {
+  33% {
+    inset: -10px;
+    transform: rotate(0deg);
+  }
+  66% {
+    inset: -10px;
+    transform: rotate(90deg);
+  }
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}
+
+
+
+  /* Media Query */
+
+  @media (max-width: 410px) {
+    .userEmailAtVerificationTime {
+      font-size: 1rem;
+    }
+  }

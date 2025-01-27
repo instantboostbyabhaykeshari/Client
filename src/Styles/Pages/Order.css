@@ -1,0 +1,164 @@
+.myOrder {
+    width: 90vw;
+    margin: 1.5rem auto;
+}
+
+.myOrder>p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.orderToggle {
+    width: 90vw;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #EEF7EF;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.toggleActive {
+    width: 45vw;
+    height: 50px;
+    background-color: #4FAF5A;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggleInactive {
+    width: 45vw;
+    height: 50px;
+    background-color: #EEF7EF;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingDiv {
+    width: 100vw;
+    height: calc(100vh - 130px - 4.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    width: 40px;
+    aspect-ratio: 1;
+    color: #4faf5a;
+    position: relative;
+    background: conic-gradient(from 134deg at top, currentColor 92deg, #0000 0)
+        top,
+      conic-gradient(from -46deg at bottom, currentColor 92deg, #0000 0) bottom;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+  .loading:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    --g: currentColor 14.5px, #0000 0 calc(100% - 14.5px), currentColor 0;
+    background: linear-gradient(45deg, var(--g)),
+      linear-gradient(-45deg, var(--g));
+    animation: l7 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+  }
+  @keyframes l7 {
+    33% {
+      inset: -10px;
+      transform: rotate(0deg);
+    }
+    66% {
+      inset: -10px;
+      transform: rotate(90deg);
+    }
+    100% {
+      inset: 0;
+      transform: rotate(90deg);
+    }
+  }
+  
+
+.no-orders {
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-list {
+    width: 100vw;
+    margin: 1rem 0 80px 0;
+}
+
+.order-card {
+    width: 100vw;
+    margin: auto;
+    background-color: #EEF7EF;
+}
+
+.orderStatusNumberDetails {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ordernumber, .orderStatus{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-name {
+    width: 50vw;
+    padding-left: 10px;
+}
+
+.item-quantity {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-price {
+    width: 30vw;
+    display: flex;
+    justify-content: right;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.order-total {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: space-between;
+}
+
+.line {
+    width: 100vw;
+    height: 20px;
+    background-color: #ffffff;
+}
+
+
+.toggle2 {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
