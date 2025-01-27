@@ -1,13 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
 import Button from '@mui/material/Button';
-import "../Styles/login.css";
 import { useState } from 'react';
 import apiConnector from "../Services/apiConnector.js";
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { setSignUpData } from '../Slices/authSlice.js';
+import deliveryPhoto from "../../public/images/Delivery.png";
+import "../Styles/login.css";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -72,7 +72,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="loginImage"></div>
+            <img className='loginLogo' src={deliveryPhoto} alt="Delivery boy" />
             <h1 className="hungryQuote">Hungry? Login fast to eat delicious food</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form">
