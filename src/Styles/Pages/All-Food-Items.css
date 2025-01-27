@@ -14,8 +14,9 @@
   width: 90vw;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  column-gap: 10px;
+  gap: 10px;
   background-color: #eef7ef;
 }
 
