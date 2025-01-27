@@ -12,6 +12,7 @@ import Cart from "./Components/Pages/Cart";
 import AllFoodItems from "./Components/Pages/All-Food-Items";
 import "./App.css";
 import Order from "./Components/Pages/Order";
+import Bookmark from "./Components/Pages/Bookmark";
 
 function App() {
   let [splashScreen, setSplashScreen] = useState(true);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/order" element={<Order />}></Route>
           <Route path="/all-food-items" element={<AllFoodItems />}></Route>
+          <Route path="/bookmark" element={<Bookmark/>}></Route>
         </Routes>
       )}
     </div>
