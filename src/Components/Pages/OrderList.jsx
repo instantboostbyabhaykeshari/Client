@@ -73,9 +73,9 @@ function OrderList() {
               </div>
               <div className="order-details">
                 <h3>Order Details:</h3>
-                <ul>
+                <ul style={{listStyleType: "none"}}>
                   {order?.items?.map((item) => (
-                    <li key={item._id}>
+                    <li key={item._id} style={{fontStyle: "italic"}}>
                       {item.foodItem} - {item.quantity} x {item.price.toLocaleString("en-IN", {style: "currency", currency: "INR"})}
                     </li>
                   ))}
