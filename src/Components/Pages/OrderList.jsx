@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import sellerImage from "/images/Delivery.png"
 import { useSelector } from 'react-redux';
 import Bottom from '../bottom';
@@ -8,6 +8,7 @@ import "../../Styles/Pages/OrderList.css";
 
 function OrderList() {
     const {signUpData} = useSelector((state)=>state.auth);
+    const [userDetails, setUserDetails] = useState([]);
 
     useEffect(() => {
         const fetchAllOrders = async() => {
@@ -19,6 +20,10 @@ function OrderList() {
                 }
 
                 console.log("All Orders details: ", response);
+                //Set User details
+                console.log("User details: ", response?.data?.allOrder?.map((order)=>order.user);
+                setUserDetails(response?.data?.allOrder?.map((order)=>order.user));
+
             }catch(err){
                 console.log(err);
                 console.log("Error in fetching all orders details.");
