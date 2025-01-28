@@ -76,7 +76,7 @@ function OrderList() {
                 <ul>
                   {order?.items?.map((item) => (
                     <li key={item._id}>
-                      {item.foodItem} - {item.quantity} x ₹{item.price}
+                      {item.foodItem} - {item.quantity} x {item.price.toLocaleString("en-IN", {style: "currency", currency: "INR"})}
                     </li>
                   ))}
                 </ul>
