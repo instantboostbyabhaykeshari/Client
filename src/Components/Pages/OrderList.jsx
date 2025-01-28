@@ -7,7 +7,6 @@ import toast from 'react-hot-toast';
 import "../../Styles/Pages/OrderList.css";
 
 function OrderList() {
-    const { signUpData } = useSelector((state) => state.auth);
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -56,7 +55,7 @@ function OrderList() {
                                     </li>
                                 ))}
                             </ul>
-                            <p><strong>Total Amount:</strong> ₹{order.totalAmount}</p>
+                            <p><strong>Total Amount:</strong> {order.totalAmount.toLocaleString("en-IN", {style: "currency", currency: "INR"})}</p>
                             <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
                             <p><strong>Payment Status:</strong> {order.paymentStatus}</p>
                         </div>
@@ -65,7 +64,8 @@ function OrderList() {
                             <p>
                                 {order?.shippingAddress?.street}, {order?.shippingAddress?.city}, {order?.shippingAddress?.state}, {order?.shippingAddress?.zipCode}, {order?.shippingAddress?.country}
                             </p>
-                            <p><strong>Order Time:</strong> {new Date(order.createdAt).toLocaleString()}</p>
+                            <p><strong>Order Time:</strong> {new Date(order.createdAt).toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                            </p>
                         </div>
                     </div>
                 ))
