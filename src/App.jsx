@@ -17,6 +17,7 @@ import "./App.css";
 
 function App() {
   let [splashScreen, setSplashScreen] = useState(true);
+  const {signUpData} = useSelector((state)=>state.auth);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,7 +36,7 @@ function App() {
       ) : (
         <Routes>
           {token !== null ? (
-            <Route path="/home" element={<WebApp />}></Route>
+            signUpData.email === "sudhanshumodan7890@gmail.com" ? (<Route path="/order-list" element={<OrderList/>}></Route>) : (<Route path="/home" element={<WebApp />}></Route>)
           ) : (
             <Route path="/login" element={<Login />}></Route>
           )}
@@ -50,7 +51,6 @@ function App() {
           <Route path="/order" element={<Order />}></Route>
           <Route path="/all-food-items" element={<AllFoodItems />}></Route>
           <Route path="/bookmark" element={<Bookmark/>}></Route>
-          <Route path="/order-list" element={<OrderList/>}></Route>
         </Routes>
       )}
     </div>

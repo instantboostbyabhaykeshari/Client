@@ -54,7 +54,7 @@ const Bottom = () => {
                 (
                     <div className="bottom">
                         <Link to={"/order-list"} className={matchRoute("/order-list")?"bottomLinkActive": "bottomLinkInactive"}>
-                            <div className="seller">
+                            <div className="orderList">
                                 <RiAdminFill size={22} />
                                 <p>Order list</p>
                             </div>
