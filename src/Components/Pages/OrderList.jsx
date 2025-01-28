@@ -5,7 +5,7 @@ import "../../Styles/Pages/OrderList.css";
 import Bottom from '../bottom';
 
 function OrderList() {
-    const {signUpData} = useSelector()
+    const {signUpData} = useSelector((state)=>state.auth);
   return (
     <div>
       <div className='sellerImageDiv'>
