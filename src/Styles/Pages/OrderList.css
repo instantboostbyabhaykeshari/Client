@@ -1,15 +1,25 @@
 .order-list-container {
-  width: 90vw;
-  margin: auto;
+    width: 100vw;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .order-card {
-  width: 100%;
+  width: 90vw;
   border: 1px solid #ddd;
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 15px;
   background: #f9f9f9;
+}
+
+.order-card-inside {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .order-header {
