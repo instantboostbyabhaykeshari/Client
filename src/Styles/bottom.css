@@ -20,11 +20,11 @@
     color: #878787;
 }
 
-.home>p , .order>p, .bookmark>p, .profile>p {
+.home>p , .order>p, .bookmark>p, .profile>p, .orderList>p {
     text-align: center;
 }
 
-.home, .order, .bookmark, .profile, .seller {
+.home, .order, .bookmark, .profile, .orderList {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@
     row-gap: 4px;
 }
 
-.home:hover, .order:hover, .bookmark:hover, .profile:hover{
+.home:hover, .order:hover, .bookmark:hover, .profile:hover, .orderList:hover{
     cursor: pointer;
 }
 

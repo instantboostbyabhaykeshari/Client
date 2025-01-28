@@ -10,9 +10,10 @@ import { useSelector } from "react-redux";
 import FoodCard from "./Components/core/Food-Card";
 import Cart from "./Components/Pages/Cart";
 import AllFoodItems from "./Components/Pages/All-Food-Items";
-import "./App.css";
 import Order from "./Components/Pages/Order";
 import Bookmark from "./Components/Pages/Bookmark";
+import OrderList from "./Components/Pages/OrderList";
+import "./App.css";
 
 function App() {
   let [splashScreen, setSplashScreen] = useState(true);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/order" element={<Order />}></Route>
           <Route path="/all-food-items" element={<AllFoodItems />}></Route>
           <Route path="/bookmark" element={<Bookmark/>}></Route>
+          <Route path="/order-list" element={<OrderList/>}></Route>
         </Routes>
       )}
     </div>

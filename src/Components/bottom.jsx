@@ -53,16 +53,10 @@ const Bottom = () => {
                 ):
                 (
                     <div className="bottom">
-                        <Link to={"/home"} className={matchRoute("/home")?"bottomLinkActive": "bottomLinkInactive"} >
-                            <div className="home">
-                                <FontAwesomeIcon className="iconColorSize" icon={faHouse} />
-                                <p>Home</p>
-                            </div>
-                        </Link>
-                        <Link to={"/seller"} className={matchRoute("/seller")?"bottomLinkActive": "bottomLinkInactive"}>
+                        <Link to={"/orderList"} className={matchRoute("/order-list")?"bottomLinkActive": "bottomLinkInactive"}>
                             <div className="seller">
                                 <RiAdminFill size={22} />
-                                <p>Seller</p>
+                                <p>Order list</p>
                             </div>
                         </Link>
                         <Link to={"/profile"} className={matchRoute("/profile")?"bottomLinkActive": "bottomLinkInactive"}>
