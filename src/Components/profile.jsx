@@ -33,18 +33,16 @@ const Profile = () => {
             <div className="userList">
                 <div className="userListIcon">
                     <div><FaUser/></div>
-                    <div><FaReceipt/></div>
-                    <div><IoLocation /></div>
-                    <div><MdPayment/></div>
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div><FaReceipt/></div>}
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div><IoLocation /></div>}
                     <div><IoIosMail/></div>
                     <div><IoMdSettings/></div>
                     <div><IoIosHelpCircle/></div>
                 </div>
                 <div className="userListName">
                     <div>My Profile</div>
-                    <div>My Orders</div>
-                    <div>Delivery Address</div>
-                    <div>Payments Methods</div>
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div>My Orders</div>}
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div>Delivery Address</div>}
                     <div>Contact Us</div>
                     <div>Setting</div>
                     <div>Help & FAQ</div>
