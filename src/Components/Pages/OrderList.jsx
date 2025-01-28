@@ -14,13 +14,13 @@ function OrderList() {
 
     useEffect(() => {
         const fetchAllOrders = async () => {
-            dispatch(setLoading(true)); // Start loading
+            dispatch(setLoading(true));
             try {
                 const response = await apiConnector("GET", "https://backend-fygl.onrender.com/api/v1/order/getAllOrders");
 
                 if (!response?.data) {
                     toast.error("Error in fetching order details.");
-                    dispatch(setLoading(false)); // Stop loading on error
+                    dispatch(setLoading(false));
                     return;
                 }
 
@@ -30,7 +30,7 @@ function OrderList() {
                 console.log(err);
                 toast.error("Error in fetching all orders details.");
             } finally {
-                dispatch(setLoading(false)); // Always stop loading
+                dispatch(setLoading(false));
             }
         };
 
@@ -42,6 +42,7 @@ function OrderList() {
         return (
             <div className="orderListLoadingDiv">
                 <div className="orderListLoading"></div>
+                <Bottom/>
             </div>
         );
     }
