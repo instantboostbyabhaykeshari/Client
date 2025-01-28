@@ -21,7 +21,7 @@ function OrderList() {
 
                 console.log("All Orders details: ", response);
                 //Set User details
-                console.log("User details: ", response?.data?.allOrder?.map((order)=>order.user);
+                console.log("User details: ", response?.data?.allOrder?.map((order)=>order.user));
                 setUserDetails(response?.data?.allOrder?.map((order)=>order.user));
 
             }catch(err){
