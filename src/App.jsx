@@ -42,7 +42,7 @@ function App() {
           )}
            <Route
             path="/"
-            element={token ? <Navigate to="/home" replace /> : <Navigate to="/login" replace />}
+            element={token ? (signUpData.email === "sudhanshumodan7890@gmail.com" ? <Navigate to="/order-list"/> : <Navigate to="/home" replace />) : <Navigate to="/login" replace />}
           />
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/verification" element={<OtpVerificationPage />}></Route>
