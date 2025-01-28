@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import sellerImage from "/images/Delivery.png"
+import sellerImage from "/images/Delivery.png";
 import { useSelector } from 'react-redux';
 import Bottom from '../bottom';
 import apiConnector from "../../Services/apiConnector.js";
@@ -7,45 +7,72 @@ import toast from 'react-hot-toast';
 import "../../Styles/Pages/OrderList.css";
 
 function OrderList() {
-    const {signUpData} = useSelector((state)=>state.auth);
-    const [userDetails, setUserDetails] = useState([]);
+    const { signUpData } = useSelector((state) => state.auth);
+    const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const fetchAllOrders = async() => {
-            try{
+        const fetchAllOrders = async () => {
+            try {
                 const response = await apiConnector("GET", "https://backend-fygl.onrender.com/api/v1/order/getAllOrders");
 
-                if(!response?.data){
+                if (!response?.data) {
                     toast.error("Error in fetching order details.");
+                    return;
                 }
 
                 console.log("All Orders details: ", response);
-                //Set User details
-                console.log("User details: ", response?.data?.allOrder?.map((order)=>order.user));
-                setUserDetails(response?.data?.allOrder?.map((order)=>order.user));
-
-            }catch(err){
+                setOrders(response?.data?.allOrder || []);
+            } catch (err) {
                 console.log(err);
-                console.log("Error in fetching all orders details.");
+                toast.error("Error in fetching all orders details.");
             }
-        }
+        };
 
         fetchAllOrders();
     }, []);
 
-  return (
-    <div>
-      <div className='sellerImageDiv'>
-        <img className='sellerImage' src={sellerImage} alt="Seller-Image" />
-      </div>
-      <div className='sellerInfo'>
-        <p className='sellername'>Sudhanshu Modanwaal</p>
-        <p className='sellerEmail'>{signUpData.email}</p>
-        <p className='sellerMobileNo'>{signUpData.mobileNo}</p>
-      </div>
-      <Bottom/>
-    </div>
-  )
+    return (
+        <div className="order-list-container">
+            <h1>All Orders</h1>
+            {orders.length === 0 ? (
+                <p>No orders found.</p>
+            ) : (
+                orders.map((order) => (
+                    <div className="order-card" key={order._id}>
+                        <div className="order-header">
+                            <img src={order?.user?.userProfilePicture || sellerImage} alt="User" className="user-profile-picture" />
+                            <div>
+                                <h2>{order?.user?.userName}</h2>
+                                <p>Email: {order?.user?.userEmail}</p>
+                                <p>Phone: {order?.user?.userPhoneNumber}</p>
+                            </div>
+                        </div>
+                        <div className="order-details">
+                            <h3>Order Details:</h3>
+                            <ul>
+                                {order?.items?.map((item) => (
+                                    <li key={item._id}>
+                                        {item.foodItem} - {item.quantity} x ₹{item.price}
+                                    </li>
+                                ))}
+                            </ul>
+                            <p><strong>Total Amount:</strong> ₹{order.totalAmount}</p>
+                            <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
+                            <p><strong>Payment Status:</strong> {order.paymentStatus}</p>
+                        </div>
+                        <div className="shipping-details">
+                            <h3>Shipping Address:</h3>
+                            <p>
+                                {order?.shippingAddress?.street}, {order?.shippingAddress?.city}, {order?.shippingAddress?.state}, {order?.shippingAddress?.zipCode}, {order?.shippingAddress?.country}
+                            </p>
+                            <p><strong>Order Time:</strong> {new Date(order.createdAt).toLocaleString()}</p>
+                        </div>
+                    </div>
+                ))
+            )}
+            <Bottom />
+        </div>
+    );
 }
 
 export default OrderList;

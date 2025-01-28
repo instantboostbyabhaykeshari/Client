@@ -1,25 +1,28 @@
-.sellerImageDiv {
-    width: 100vw;
-    height: 150px;
+.order-list-container {
+    padding: 20px;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+.order-header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #EEF7EF;
+    margin-bottom: 10px;
 }
 
-
-.sellerImage {
-    width: 80px;
-    height: 80px;
+.user-profile-picture {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    margin-right: 15px;
 }
 
-.sellername {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.sellerEmail, .sellerMobileNo {
-    font-size: 16px;
-    font-weight: 500;
+.order-details, .shipping-details {
+    margin-top: 10px;
 }
