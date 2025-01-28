@@ -2,6 +2,7 @@ import React from 'react';
 import sellerImage from "/images/Delivery.png"
 import { useSelector } from 'react-redux';
 import "../../Styles/Pages/OrderList.css";
+import Bottom from '../bottom';
 
 function OrderList() {
     const {signUpData} = useSelector()
@@ -15,6 +16,7 @@ function OrderList() {
         <p className='sellerEmail'>{signUpData.email}</p>
         <p className='sellerMobileNo'>{signUpData.mobileNo}</p>
       </div>
+      <Bottom/>
     </div>
   )
 }
