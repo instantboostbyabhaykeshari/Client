@@ -67,7 +67,7 @@ function OrderList() {
                 />
                 <div>
                   <h2>{order?.user?.userName}</h2>
-                  <p>Email: {order?.user?.userEmail}</p>
+                  {/* <p>Email: {order?.user?.userEmail}</p> */}
                   <p>Phone: {order?.user?.userPhoneNumber}</p>
                 </div>
               </div>
