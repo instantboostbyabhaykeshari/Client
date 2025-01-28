@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+.order-list-container>p{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
 .order-card {
   width: 90vw;
   border: 1px solid #ddd;
@@ -19,8 +25,8 @@
 .order-card-inside {
     width: 90%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .order-header {

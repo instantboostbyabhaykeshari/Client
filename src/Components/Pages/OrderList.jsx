@@ -52,7 +52,7 @@ function OrderList() {
 
   return (
     <div className="order-list-container">
-      <h1>All Orders</h1>
+      <p>All Orders</p>
       {orders.length === 0 ? (
         <p>No orders found.</p>
       ) : (
