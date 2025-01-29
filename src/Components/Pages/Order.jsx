@@ -63,7 +63,7 @@ function Order() {
       ) : (
         <div className="order-list">
           {toggle===1 && orderRecentData.map((order, index) => (
-            <div key={index} className="order-card">
+            <div key={index} className="orderCcard">
               <div className="orderStatusNumberDetails">
                 <p className='ordernumber'>Order #{index + 1}</p>
                 <p className='orderStatus'>Status: {order.isDelivered ? ("Delivered"): ("Ordered")}</p>
