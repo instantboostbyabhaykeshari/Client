@@ -160,9 +160,10 @@ function Cart() {
         <button className="cartButton " onClick={() => setIsOpen(!isOpen)}>Proceed To Pay</button>
       </div>
 
+      <Bottom/>
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={isOpen ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+        initial={{ y: 100, visibility: "none" }}
+        animate={isOpen ? { y: 0, visibility: "visible" } : { y: 100, visibility: "none" }}
         transition={{ type: "spring", stiffness: 100 }}
         className="payment-container"
         >
@@ -172,7 +173,6 @@ function Cart() {
           <div className="paymentCancelButton" onClick={() => setIsOpen(!isOpen)}><p>Cancel</p></div>
         </div>
       </motion.div>
-      <Bottom/>
     </div>
   );
 }
