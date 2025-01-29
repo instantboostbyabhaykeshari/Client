@@ -160,19 +160,19 @@ function Cart() {
         <button className="cartButton " onClick={() => setIsOpen(!isOpen)}>Proceed To Pay</button>
       </div>
 
-      <Bottom/>
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={isOpen ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
         className="payment-container"
-      >
+        >
         <div className="paymentMethods">
           <div className="cashOnDelivery"><p>Cash on Delivery</p></div>
           <div className="online" onClick={paymentHandler}><p>Online</p></div>
           <div className="paymentCancelButton" onClick={() => setIsOpen(!isOpen)}><p>Cancel</p></div>
         </div>
       </motion.div>
+      <Bottom/>
     </div>
   );
 }
