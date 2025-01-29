@@ -162,8 +162,8 @@ function Cart() {
 
       <Bottom/>
       <motion.div
-        initial={{ y: 20000, visibility: "none" }}
-        animate={isOpen ? { y: 0, visibility: "visible" } : { y: 20000, visibility: "none" }}
+        initial={{ y: 200, visibility: "none" }}
+        animate={isOpen ? { y: 0, visibility: "visible" } : { y: 200, visibility: "none" }}
         transition={{ type: "spring", stiffness: 100 }}
         className="payment-container"
         >
