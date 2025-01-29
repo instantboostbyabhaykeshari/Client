@@ -122,12 +122,13 @@
 
 .cashOnDelivery, .online {
     width: 90vw;
-    padding: 10px 0;
-    font-size: 18px;
+    padding: 8px 0;
+    font-size: 16px;
     font-weight: 600;
     background-color: #4FAF5A;
     color: #EEF7EF;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
 }
