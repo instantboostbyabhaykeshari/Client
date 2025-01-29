@@ -160,6 +160,7 @@ function Cart() {
         <button className="cartButton " onClick={() => setIsOpen(!isOpen)}>Proceed To Pay</button>
       </div>
 
+      <Bottom/>
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={isOpen ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
@@ -168,10 +169,11 @@ function Cart() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <h2>Cash on delivery</h2>
-        <h2>Online payment</h2>
+        <div className="paymentMethods">
+          <div className="cashOnDelivery"><p>Cash on delivery</p></div>
+          <div className="online"><p>Online</p></div>
+        </div>
       </motion.div>
-      <Bottom/>
     </div>
   );
 }

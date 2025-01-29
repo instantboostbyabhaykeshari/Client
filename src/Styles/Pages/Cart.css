@@ -99,3 +99,18 @@
     font-size: 16px;
     font-weight: 600;
 }
+
+.paymentMethods {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cashOnDelivery, .online {
+    width: 80vw;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
