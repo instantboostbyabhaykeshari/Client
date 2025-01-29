@@ -162,9 +162,9 @@ function Cart() {
 
       <Bottom/>
       <motion.div
-        initial={{ y: 150, visibility: "none" }}
-        animate={isOpen ? { y: 0, visibility: "visible" } : { y: 150, visibility: "none" }}
-        transition={{ type: "spring", stiffness: 100 }}
+        initial={{ y: 200, visibility: "none" }}
+        animate={isOpen ? { y: 0, visibility: "visible" } : { y: 200, visibility: "none" }}
+        transition={{ type: "spring", stiffness: 50 }}
         className="payment-container"
         >
         <div className="paymentMethods">
