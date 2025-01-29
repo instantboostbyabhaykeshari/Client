@@ -100,10 +100,9 @@
 }
 
 .orderCcard {
-    width: 90vw;
+    width: 100vw;
     margin: auto;
     background-color: #EEF7EF;
-    border-radius: 8px;
 }
 
 .orderStatusNumberDetails {
