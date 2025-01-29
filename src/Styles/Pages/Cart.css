@@ -117,12 +117,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     z-index: 1000;
-    background-color: #EEF7EF;
 }
 
 .cashOnDelivery, .online {
-    width: 80vw;
+    width: 100vw;
     padding: 10px 0;
     font-size: 18px;
     font-weight: 600;
