@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import {removeFoodItemFromCart, updateFoodItemQuantity} from "../../Slices/cartSlice";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Bottom from "../bottom";
+import {motion} from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import {BuyFoodOrder} from "../../Services/CustomerAPI.js";
 import "../../Styles/Pages/Cart.css";
@@ -15,6 +16,7 @@ function Cart() {
   const { foodItemAddedToCart } = useSelector((state) => state.cart);
   const { signUpData } = useSelector((state) => state.auth);
   const { successfulPaymentToken } = useSelector((state) => state.cart);
+  const [isOpen, setIsOpen] = useState(false);
   console.log("Payment token: ", successfulPaymentToken);
   console.log("Food Item Added to cart: ", foodItemAddedToCart);
 
@@ -65,6 +67,9 @@ function Cart() {
       console.log("Token is not present");
     }
   }
+
+  //Animated button 
+  
 
   return (
     <div className="cartPage">
@@ -152,8 +157,20 @@ function Cart() {
       </div>
 
       <div className="cartButtonDiv">
-        <button className="cartButton " onClick={paymentHandler}>Proceed To Pay</button>
+        <button className="cartButton " onClick={() => setIsOpen(!isOpen)}>Proceed To Pay</button>
       </div>
+
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={isOpen ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className={`fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-2xl p-4 transition-all ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
+        <h2>Cash on delivery</h2>
+        <h2>Online payment</h2>
+      </motion.div>
       <Bottom/>
     </div>
   );
