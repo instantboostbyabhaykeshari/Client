@@ -165,12 +165,10 @@ function Cart() {
         initial={{ y: 100, opacity: 0 }}
         animate={isOpen ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
-        className={`fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-2xl p-4 transition-all ${
-          isOpen ? "block" : "hidden"
-        }`}
+        className="payment-container"
       >
         <div className="paymentMethods">
-          <div className="cashOnDelivery"><p>Cash on delivery</p></div>
+          <div className="cashOnDelivery"><p>Cash on Delivery</p></div>
           <div className="online"><p>Online</p></div>
         </div>
       </motion.div>
