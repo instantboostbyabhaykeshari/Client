@@ -169,7 +169,7 @@ function Cart() {
       >
         <div className="paymentMethods">
           <div className="cashOnDelivery"><p>Cash on Delivery</p></div>
-          <div className="online"><p>Online</p></div>
+          <div className="online" onClick={paymentHandler}><p>Online</p></div>
           <div className="paymentCancelButton" onClick={() => setIsOpen(!isOpen)}><p>Cancel</p></div>
         </div>
       </motion.div>
