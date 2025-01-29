@@ -141,5 +141,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #EEF7EF;
     border-radius: 8px;
 }
