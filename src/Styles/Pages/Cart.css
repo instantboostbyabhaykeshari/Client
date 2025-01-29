@@ -132,3 +132,14 @@
     align-items: center;
     border-radius: 8px;
 }
+
+.paymentCancelButton {
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
