@@ -21,6 +21,11 @@ const Profile = () => {
     const [confirmationModal, setConfirmationModal] = useState(null);
     // console.log("Profile SignUpData: ",signUpData);
 
+
+    const handleClick = (path) => {
+        navigate(path);
+    };
+
     return (
         <div className="profilePage">
             <div className="user">
@@ -40,12 +45,12 @@ const Profile = () => {
                     <div><IoIosHelpCircle/></div>
                 </div>
                 <div className="userListName">
-                    <div>My Profile</div>
-                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div>My Orders</div>}
-                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div>Delivery Address</div>}
-                    <div>Contact Us</div>
-                    <div>Setting</div>
-                    <div>Help & FAQ</div>
+                    <div style={{ cursor: 'pointer' }}  onClick={() => handleClick('/profile-details')}>My Profile</div>
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div  style={{ cursor: 'pointer' }} onClick={() => handleClick('/order')}>My Orders</div>}
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/address')}>Store Info</div>}
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/contact-us')}>Contact Us</div>
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/settings')}>Settings</div>
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/help')}>Help & FAQ</div>
                 </div>
             </div>
 

@@ -13,6 +13,11 @@ import AllFoodItems from "./Components/Pages/All-Food-Items";
 import Order from "./Components/Pages/Order";
 import Bookmark from "./Components/Pages/Bookmark";
 import OrderList from "./Components/Pages/OrderList";
+import Address from "./Components/Pages/Address";
+import ContactUs from "./Components/Pages/ContactUs";
+import Settings from "./Components/Pages/Settings";
+import HelpFAQ from "./Components/Pages/HelpFAQ";
+import ProfileDetails from "./Components/Pages/ProfileDetails";
 import "./App.css";
 
 function App() {
@@ -51,6 +56,11 @@ function App() {
           <Route path="/order" element={<Order />}></Route>
           <Route path="/all-food-items" element={<AllFoodItems />}></Route>
           <Route path="/bookmark" element={<Bookmark/>}></Route>
+          <Route path="/profile-details" element={<ProfileDetails />} />
+          <Route path="/address" element={<Address />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/help" element={<HelpFAQ />} />
         </Routes>
       )}
     </div>
