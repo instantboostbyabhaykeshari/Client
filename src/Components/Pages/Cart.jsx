@@ -58,7 +58,7 @@ function Cart() {
 
   //Payment handler
   const {token} = useSelector((state)=> state.auth);
-  // console.log("Cart token: ", token);
+  console.log("Cart token: ", token);
   const paymentHandler = () => {
     if(token && grandTotal > 0){
       BuyFoodOrder(token, foodItemAddedToCart, signUpData, navigate, dispatch);
