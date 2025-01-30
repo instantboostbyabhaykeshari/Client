@@ -69,9 +69,9 @@ function Cart() {
   }
 
   //Cash on delivery handler
-  const cashOnDeliveryHandler = () => {
+  const cashOnDeliveryHandler = async() => {
     if(token && grandTotal > 0){
-      cashOnDelivry(token, foodItemAddedToCart, totalAmount, navigate);
+      await cashOnDelivry(token, foodItemAddedToCart, totalAmount, navigate);
       dispatch(cartEmpty([]));
     }else{
       console.log("Token is not present or grandTotal is 0");
