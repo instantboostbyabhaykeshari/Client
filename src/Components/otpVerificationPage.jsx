@@ -22,7 +22,7 @@ function OtpVerificationPage() {
       event.preventDefault();
       const {email, mobileNo} = signUpData;
       dispatch(signUp(email, mobileNo, otp, navigate));
-      if(signUpData.email === ""){
+      if(signUpData.email === import.meta.env.VITE_SELLER_EMAIL){
         navigate("/order-list");
       }else{
         navigate("/home");
