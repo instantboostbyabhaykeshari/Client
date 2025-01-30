@@ -24,7 +24,6 @@ export function signUp (email, phoneNumber, otp, navigate) {
                 console.log("Token can't be stored in localStorage.");
             }
             toast.success("SignUp successfully.");
-            navigate("/home");;
         }catch(err){
             console.log(err);
             console.log("Error in fetching the signUp data.");

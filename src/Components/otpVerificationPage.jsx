@@ -22,6 +22,11 @@ function OtpVerificationPage() {
       event.preventDefault();
       const {email, mobileNo} = signUpData;
       dispatch(signUp(email, mobileNo, otp, navigate));
+      if(signUpData.email === ""){
+        navigate("/order-list");
+      }else{
+        navigate("/home");
+      }
     }
 
     otp = Number(otp);
