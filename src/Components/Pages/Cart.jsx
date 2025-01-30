@@ -60,20 +60,20 @@ function Cart() {
   const {token} = useSelector((state)=> state.auth);
   // console.log("Cart token: ", token);
   const paymentHandler = () => {
-    if(token){
+    if(token && grandTotal > 0){
       BuyFoodOrder(token, foodItemAddedToCart, signUpData, navigate, dispatch);
     }
     else{
-      console.log("Token is not present");
+      console.log("Token is not present or grandTotal is 0");
     }
   }
 
   //Cash on delivery handler
   const cashOnDeliveryHandler = () => {
-    if(token){
+    if(token && grandTotal > 0){
       cashOnDelivry(token, foodItemAddedToCart, totalAmount, navigate);
     }else{
-      console.log("Token is not present");
+      console.log("Token is not present or grandTotal is 0");
     }
   }
   

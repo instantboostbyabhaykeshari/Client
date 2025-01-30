@@ -156,12 +156,11 @@ export const cashOnDelivry = async(token, foodItems, totalAmount, navigate) => {
     }
 
     console.log("Cash on delivery response: ", response);
+    toast.dismiss(toastId);
+    navigate("/order");
 
   }catch(err){
     console.log(err);
     console.log("Something get wrong with fetching in api of cash on delivery.");
-  }finally{
-    toast.dismiss(toastId);
-    navigate("/order");
   }
 }
