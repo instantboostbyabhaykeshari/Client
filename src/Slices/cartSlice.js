@@ -74,6 +74,11 @@ const cartSlice = createSlice({
         // Sync with localStorage
         localStorage.setItem("cart", JSON.stringify(state.foodItemAddedToCart));
       }
+    },
+    cartEmpty(state, value){
+      state.foodItemAddedToCart = value.payload;
+      state.counter = 0;
+      localStorage.setItem("cart", JSON.stringify(state.foodItemAddedToCart));
     }
   },
 });
@@ -82,6 +87,7 @@ export const {
   addFoodItemToCart,
   removeFoodItemFromCart,
   updateFoodItemQuantity,
-  setSuccessfulPaymentToken
+  setSuccessfulPaymentToken,
+  cartEmpty
 } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
-import {removeFoodItemFromCart, updateFoodItemQuantity} from "../../Slices/cartSlice";
+import {removeFoodItemFromCart, updateFoodItemQuantity, cartEmpty} from "../../Slices/cartSlice";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Bottom from "../bottom";
 import {motion} from "framer-motion";
@@ -17,8 +17,8 @@ function Cart() {
   const { signUpData } = useSelector((state) => state.auth);
   const { successfulPaymentToken } = useSelector((state) => state.cart);
   const [isOpen, setIsOpen] = useState(false);
-  console.log("Payment token: ", successfulPaymentToken);
-  console.log("Food Item Added to cart: ", foodItemAddedToCart);
+  // console.log("Payment token: ", successfulPaymentToken);
+  // console.log("Food Item Added to cart: ", foodItemAddedToCart);
 
   const handleIncreaseQuantity = (foodItemName) => {
     const item = foodItemAddedToCart.find(
@@ -58,7 +58,7 @@ function Cart() {
 
   //Payment handler
   const {token} = useSelector((state)=> state.auth);
-  console.log("Cart token: ", token);
+  // console.log("Cart token: ", token);
   const paymentHandler = () => {
     if(token && grandTotal > 0){
       BuyFoodOrder(token, foodItemAddedToCart, signUpData, navigate, dispatch);
@@ -72,6 +72,7 @@ function Cart() {
   const cashOnDeliveryHandler = () => {
     if(token && grandTotal > 0){
       cashOnDelivry(token, foodItemAddedToCart, totalAmount, navigate);
+      dispatch(cartEmpty([]));
     }else{
       console.log("Token is not present or grandTotal is 0");
     }
