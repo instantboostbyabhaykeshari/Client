@@ -45,12 +45,12 @@ const Profile = () => {
                     <div><IoIosHelpCircle/></div>
                 </div>
                 <div className="userListName">
-                    <div style={{ cursor: 'pointer' }}  onClick={() => handleClick('/profile-details')}>My Profile</div>
-                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div  style={{ cursor: 'pointer' }} onClick={() => handleClick('/order')}>My Orders</div>}
-                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/address')}>Store Info</div>}
-                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/contact-us')}>Contact Us</div>
-                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/settings')}>Settings</div>
-                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/help')}>Help & FAQ</div>
+                    <div style={{ cursor: 'pointer' }}  onClick={() => handleClick('/profile-details')}><p>My Profile</p></div>
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div  style={{ cursor: 'pointer' }} onClick={() => handleClick('/order')}><p>My Orders</p></div>}
+                    {signUpData.email !== "sudhanshumodan7890@gmail.com" && <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/address')}><p>Store Info</p></div>}
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/contact-us')}><p>Contact Us</p></div>
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/settings')}><p>Settings</p></div>
+                    <div style={{ cursor: 'pointer' }} onClick={() => handleClick('/help')}><p>Help & FAQ</p></div>
                 </div>
             </div>
 
