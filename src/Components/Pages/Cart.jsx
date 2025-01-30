@@ -7,7 +7,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import Bottom from "../bottom";
 import {motion} from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import {BuyFoodOrder} from "../../Services/CustomerAPI.js";
+import {BuyFoodOrder, cashOnDelivry} from "../../Services/CustomerAPI.js";
 import "../../Styles/Pages/Cart.css";
 
 function Cart() {
@@ -58,7 +58,7 @@ function Cart() {
 
   //Payment handler
   const {token} = useSelector((state)=> state.auth);
-  console.log("Cart token: ", token);
+  // console.log("Cart token: ", token);
   const paymentHandler = () => {
     if(token){
       BuyFoodOrder(token, foodItemAddedToCart, signUpData, navigate, dispatch);
@@ -68,7 +68,14 @@ function Cart() {
     }
   }
 
-  //Animated button 
+  //Cash on delivery handler
+  const cashOnDeliveryHandler = () => {
+    if(token){
+      cashOnDelivry(token, foodItemAddedToCart, totalAmount, navigate);
+    }else{
+      console.log("Token is not present");
+    }
+  }
   
 
   return (
@@ -168,7 +175,7 @@ function Cart() {
         className="payment-container"
         >
         <div className="paymentMethods">
-          <div className="cashOnDelivery"><p>Cash on Delivery</p></div>
+          <div className="cashOnDelivery" onClick={cashOnDeliveryHandler}><p>Cash on Delivery</p></div>
           <div className="online" onClick={paymentHandler}><p>Online</p></div>
           <div className="paymentCancelButton" onClick={() => setIsOpen(!isOpen)}><p>Cancel</p></div>
         </div>

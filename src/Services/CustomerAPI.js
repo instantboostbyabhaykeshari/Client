@@ -30,12 +30,12 @@ export async function BuyFoodOrder(token, foodItems, user, navigate, dispatch) {
       toast.error("Razorpay SDK failed to load. Check your Internet connection.");
       return;
     }
-console.log("script load ho gyi jee aage error hoga")
+
        const totalAmount = foodItems.reduce((total, item) => {
         return total + (item.foodItemPrice * item.quantity);
       }, 0); 
 
-      console.log("total amount hai jee",totalAmount);
+      // console.log("total amount hai jee",totalAmount);
 
     // Initiating the payment request to backend
     const orderResponse = await apiConnector(
@@ -140,5 +140,28 @@ async function sendOrderSuccessEmail(response, amount, token, dispatch, navigate
     navigate("/order");
   } catch (error) {
     console.log("ORDER SUCCESS EMAIL ERROR: ", error);
+  }
+}
+
+
+
+//Cash on delivery
+
+export const cashOnDelivry = async(token, foodItems, totalAmount, navigate) => {
+  const toastId = toast.success("Ordered...");
+  try{
+    const response = await apiConnector("POST", "https://backend-fygl.onrender.com/api/v1/cashOnDelivery", {token, foodItems, totalAmount});
+    if(!response){
+      return new Error("Error in fetching cash on delivery api.");
+    }
+
+    console.log("Cash on delivery response: ", response);
+
+  }catch(err){
+    console.log(err);
+    console.log("Something get wrong with fetching in api of cash on delivery.");
+  }finally{
+    toast.dismiss(toastId);
+    navigate("/order");
   }
 }
