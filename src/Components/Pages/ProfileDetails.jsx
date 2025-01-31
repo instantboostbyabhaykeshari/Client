@@ -44,7 +44,7 @@ const ProfileDetails = () => {
 
       <div style={styles.infoSection}>
         <h3 style={styles.sectionHeading}>Delivery Address</h3>
-        <textarea
+        <textarea className="profileDetailsTextarea"
           style={styles.textarea}
           value={address}
           onChange={(e) => setAddress(e.target.value)} 
