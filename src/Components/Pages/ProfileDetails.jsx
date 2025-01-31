@@ -35,7 +35,7 @@ const ProfileDetails = () => {
         <p style={{fontSize: "14px"}}>
           <strong>Name:</strong> {signUpData?.name}
         </p>
-        <p style={{fontSize: "14px"}}>
+        <p style={{fontSize: "10px"}}>
           <strong>Email:</strong> {signUpData?.email}
         </p>
         <p style={{fontSize: "14px"}}>
