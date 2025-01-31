@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Bottom from "../bottom";
 import LocationSelector from "../LocationSelector";
 import { useSelector } from "react-redux";
+import "../../Styles/Pages/ProfileDetails.css";
 
 const ProfileDetails = () => {
   const [address, setAddress] = useState("");
