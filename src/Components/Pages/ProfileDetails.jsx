@@ -31,13 +31,13 @@ const ProfileDetails = () => {
 
       <div style={styles.infoSection}>
         <h3 style={styles.sectionHeading}>Profile Details</h3>
-        <p>
+        <p style={{fontSize: "14px"}}>
           <strong>Name:</strong> {signUpData?.name}
         </p>
-        <p>
+        <p style={{fontSize: "14px"}}>
           <strong>Email:</strong> {signUpData?.email}
         </p>
-        <p>
+        <p style={{fontSize: "14px"}}>
           <strong>Phone:</strong> {signUpData?.mobileNo || "9870667515"}
         </p>
       </div>
@@ -64,20 +64,16 @@ const ProfileDetails = () => {
 
 const styles = {
   container: {
-    fontFamily: "Arial, sans-serif",
-    maxWidth: "600px",
-    margin: "0 auto",
-    padding: "20px",
-    backgroundColor: "#f9f9f9",
-    borderRadius: "8px",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    width: "100vw",
+    display: "flex",
+    flexDirection: "column"
   },
   heading: {
     fontSize: "24px",
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: "10px",
-    color:"#4faf5a",
+    margin: "1rem 0 0.4rem 0",
+    color:"rgb(79, 175, 90)"
   },
   subHeading: {
     fontSize: "16px",
@@ -86,11 +82,12 @@ const styles = {
     marginBottom: "20px",
   },
   infoSection: {
-    marginBottom: "20px",
-    padding: "15px",
-    backgroundColor: "#fff",
+    width: "90vw",
+    margin: "1rem auto",
+    padding: "10px",
+    backgroundColor: "rgb(255, 255, 255)",
     borderRadius: "8px",
-    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+    boxShadow: "rgba(0, 0, 0, 0.1) 0px 2px 4px"
   },
   sectionHeading: {
     fontSize: "18px",
@@ -98,11 +95,11 @@ const styles = {
     color: "#333",
     borderBottom: "1px solid #ddd",
     paddingBottom: "5px",
+    textAlign: "center"
   },
   textarea: {
     width: "100%",
     height: "80px",
-    padding: "10px",
     borderRadius: "8px",
     border: "1px solid #ddd",
     marginBottom: "10px",
