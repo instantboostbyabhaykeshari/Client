@@ -30,6 +30,7 @@
     "cookie-parser": "^1.4.7",
     "crypto": "^1.0.1",
     "express-fileupload": "^1.5.1",
+    "firebase": "^11.2.0",
     "framer-motion": "^12.0.6",
     "jsonwebtoken": "^9.0.2",
     "razorpay": "^2.9.5",

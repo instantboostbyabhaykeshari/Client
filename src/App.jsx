@@ -18,6 +18,7 @@ import ContactUs from "./Components/Pages/ContactUs";
 import Settings from "./Components/Pages/Settings";
 import HelpFAQ from "./Components/Pages/HelpFAQ";
 import ProfileDetails from "./Components/Pages/ProfileDetails";
+import { requestNotificationPermission } from "./firebase.js"
 import "./App.css";
 
 function App() {
@@ -33,6 +34,22 @@ function App() {
   const { token } = useSelector((state) => state.auth);
   //const token = localStorage.removeItem();
   // console.log(token);
+
+
+  //FireBase
+  useEffect(() => {
+    requestNotificationPermission()
+      .then((token) => {
+        if (token) {
+          fetch("http://localhost:5000/api/admin/save-token", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token }),
+          });
+        }
+        console.log("Abhay")
+      });
+  }, []);
 
   return (
     <div>
